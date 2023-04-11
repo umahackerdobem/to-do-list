@@ -11,3 +11,39 @@
   --green-500: #26c277;
   --yellow-500: #ffd231;
 }
+
+/* :focus {
+  outline: transparent;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all 0.3 ease-out;
+}
+
+body {
+  background: var(--gray-500);
+  color: var(--gray-100);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* input,
+button {
+  border-radius: 8px;
+  padding: 1rem;
+}
+input:hover,
+button:hover {
+  cursor: pointer;
+} */
