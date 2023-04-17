@@ -11,7 +11,7 @@ let taskData = [
   {
     id: uid(),
     name: "Dar banho nos gatos",
-    toDo: false,
+    toDo: true,
   },
 ];
 const addTaskInput = document.getElementById("task_input");
@@ -85,6 +85,26 @@ function addTask(event) {
 // complete task
 function completeTask(event) {
   console.log("Complete task");
+
+  const todoIcon = event.target;
+  todoIcon.classList.add("hidden");
+
+  const taskToCompletId = todoIcon.parentNode.parentNode.id;
+  const taskToComplete = document.getElementById(taskToCompletId);
+
+  taskToComplete.classList.add("done");
+  taskToComplete.classList.remove("todo");
+
+  const doneIcon = todoIcon.parentNode.childNodes[1];
+  doneIcon.classList.remove("hidden");
+
+  taskData.find((item) => {
+    if (item.id === taskToCompletId) {
+      item.toDo = false;
+    }
+
+    return item.id === taskToCompletId;
+  });
 }
 
 // incomplete task
