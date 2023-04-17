@@ -25,6 +25,16 @@ function addTask(event) {
   console.log("Add Task");
 }
 
+const newTaskName = addTaskInput.value;
+
+const newTask = {
+  id: uid(),
+  name: newTaskName,
+  toDo: true,
+};
+
+taskData.push(newTask);
+
 // complete task
 function completeTask(event) {
   console.log("Complete task");
