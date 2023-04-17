@@ -21,6 +21,12 @@
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css"/>
 
+      <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"
+    />
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -44,17 +50,17 @@
         </form>
 
         <section class="tasks_counter">
-          <div class="all_tasks">
+         <div class="all_tasks">
             <strong>Tarefas criadas</strong>
             <span class="count">3</span>
-          </div>
-          <div class="done_tasks">
+            </div>
+            <div class="done_tasks">
             <strong>Tarefas concluídas</strong>
             <span class="count">4</span>
           </div>
         </section>
 
-        <section class="empty_tasks">
+        <section class="empty_tasks" hidden>
           <img src="./assets/empty-tasks.svg" alt="" />
           <div>
             <p>Você ainda não tem tarefas cadastradas</p>
@@ -62,8 +68,21 @@
           </div>
         </section>
         <ul class="tasks_list">
-          <li class="task">
-            <p>Dar banho nos gatos</p>
+          <li class="task todo">
+                  <div>
+              <i class="ph-duotone ph-circle-dashed check_btn"></i>
+              <p>Dar banho nos gatos</p>
+            </div>
+            <i class="ph-duotone ph-trash delete_btn"></i>
+          </li>
+          <li class="task done">
+            <div>
+              <i class="ph-duotone ph-check-circle check_btn"></i>
+              <p class="risked">Dar banho nos gatos</p>
+            </div>
+            <i class="ph-duotone ph-trash delete_btn"></i>
+            
+            </li><div>
             </li>
         </ul>
       </main>
