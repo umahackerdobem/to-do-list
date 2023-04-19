@@ -126,11 +126,11 @@ function completeTask(event) {
   const doneIcon = todoIcon.parentNode.childNodes[1];
   doneIcon.classList.remove("hidden");
 
-  taskData.find((item) => {
-    if (item.id === taskToCompletId) {
-      item.toDo = false;
-    }
-  });
+  // Alteração das tasks completas
+
+  const task = taskData.find((item) => item.id === taskToCompletId);
+  task.toDo = false;
+  localStorage.setItem("taskData", JSON.stringify(taskData));
   counter();
 }
 
@@ -153,11 +153,11 @@ function incompleteTask(event) {
   const todoIcon = doneIcon.parentNode.childNodes[0];
   todoIcon.classList.remove("hidden");
 
-  taskData.find((item) => {
-    if (item.id === taskToIncompleteId) {
-      item.toDo = true;
-    }
-  });
+  // Alteração das tasks incompletas
+
+  const task = taskData.find((item) => item.id === taskToIncompleteId);
+  item.toDo = true;
+  localStorage.setItem("taskData", JSON.stringify(taskData));
   counter();
 }
 
