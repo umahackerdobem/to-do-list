@@ -167,11 +167,10 @@ function deleteTask(event) {
   const taskToDeleteId = event.target.parentNode.id;
   const taskToDelete = document.getElementById(taskToDeleteId);
 
-  const tasksWithoutDeletedOne = taskData.filter((task) => {
-    return task.id !== taskToDeleteId;
-  });
+  // Remoção do item do localStorage
+  taskData = taskData.filter((item) => item.id !== taskToDeleteId);
+  localStorage.setItem("taskData", JSON.stringify(taskData));
 
-  taskData = tasksWithoutDeletedOne;
   taskList.removeChild(taskToDelete);
   counter();
   verifyIfListIsEmpty();
