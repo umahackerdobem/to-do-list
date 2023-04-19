@@ -75,7 +75,17 @@ function createNewTaskEl(taskName, taskId) {
   deleteIcon.classList.add("delete_btn");
   deleteIcon.addEventListener("click", deleteTask);
 
-  console.log(taskList);
+  // Estilização das classes quando tasks marcadas quando concluídas
+  const taskDone = taskData.find((item) => item.id == taskId);
+  if (taskDone.toDo == false) {
+    task.classList.add("done");
+    task.classList.remove("todo");
+    name.classList.add("risked");
+    todoIcon.classList.add("hidden");
+    doneIcon.classList.remove("hidden");
+  }
+
+  // console.log(taskList);
   leftContent.appendChild(todoIcon);
   leftContent.appendChild(doneIcon);
   leftContent.appendChild(name);
