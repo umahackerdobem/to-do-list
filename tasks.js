@@ -95,7 +95,7 @@ function createNewTaskEl(taskName, taskId) {
 // add new task
 function addTask(event) {
   event.preventDefault();
-  console.log("Add Task");
+  //console.log("Add Task");
 
   const newTaskName = addTaskInput.value;
 
@@ -109,13 +109,16 @@ function addTask(event) {
   const taskElement = createNewTaskEl(newTask.name, newTask.id);
   taskList.appendChild(taskElement);
 
+  // Adição do método setItem do localStorage
+  localStorage.setItem("taskData", JSON.stringify(taskData));
+
   addTaskInput.value = "";
   counter();
   verifyIfListIsEmpty();
 }
 // complete task
 function completeTask(event) {
-  console.log("Complete task");
+  //console.log("Complete task");
 
   const todoIcon = event.target;
   todoIcon.classList.add("hidden");
@@ -142,7 +145,7 @@ function completeTask(event) {
 
 // incomplete task
 function incompleteTask(event) {
-  console.log("Incomplete task");
+  //console.log("Incomplete task");
 
   const doneIcon = event.target;
   doneIcon.classList.add("hidden");
